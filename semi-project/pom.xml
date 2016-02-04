@@ -24,15 +24,19 @@
 		<org.springframework.version>4.2.4.RELEASE</org.springframework.version>
 		<org.springsecurity.version>4.0.3.RELEASE</org.springsecurity.version>
 		<org.hibernate.version>4.3.11.Final</org.hibernate.version>
-
-		<org.aspectj.version>1.8.8</org.aspectj.version>
-		<org.slf4j.version>1.7.14</org.slf4j.version>
+		
+		<org.slf4j.version>1.7.6</org.slf4j.version>
 		<org.log4j.version>1.2.17</org.log4j.version>
+		
 		<mysql.connector.version>5.1.38</mysql.connector.version>
+
 		<javax.servlet.servlet-api.version>2.5</javax.servlet.servlet-api.version>
 		<javax.servlet.jsp.jsp-api.version>2.2</javax.servlet.jsp.jsp-api.version>
 		<javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
-		<org.apache.tiles.version>3.0.5</org.apache.tiles.version>
+		
+		<org.apache.tiles.version>3.0.4</org.apache.tiles.version>
+		<org.apache.tiles.request.version>1.0.4</org.apache.tiles.request.version>
+		
 		<org.freemarker.version>2.3.23</org.freemarker.version>
 
 		<junit.version>4.7</junit.version>
@@ -228,23 +232,55 @@
 			<!-- tiles -->
 			<dependency>
 				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-api</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-core</artifactId>
-				<version>3.0.4</version>
+				<artifactId>tiles-jsp</artifactId>
+				<version>${org.apache.tiles.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tiles</groupId>
 				<artifactId>tiles-servlet</artifactId>
-				<version>3.0.4</version>
+				<version>${org.apache.tiles.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-api</artifactId>
+				<version>${org.apache.tiles.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId></groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-core</artifactId>
+				<version>${org.apache.tiles.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tiles</groupId>
 				<artifactId>tiles-template</artifactId>
-				<version>3.0.4</version>
+				<version>${org.apache.tiles.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-request-api</artifactId>
+				<version>${org.apache.tiles.request.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tiles</groupId>
+				<artifactId>tiles-request-servlet</artifactId>
+				<version>${org.apache.tiles.request.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-digester</groupId>
+				<artifactId>commons-digester</artifactId>
+				<version>2.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tiles</groupId>
@@ -253,140 +289,45 @@
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-el</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-extras</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-compat</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-freemarker</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-jsp</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-mvel</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.mvel</groupId>
-				<artifactId>mvel2</artifactId>
-				<version>2.0.11</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-ognl</artifactId>
-				<version>3.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>ognl</groupId>
-				<artifactId>ognl</artifactId>
-				<version>2.7.3</version>
-			</dependency>
-			<dependency>
-				<groupId>jboss</groupId>
-				<artifactId>javassist</artifactId>
-				<version>3.7.ga</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-request-mustache</artifactId>
-				<version>1.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
 				<artifactId>tiles-request-jsp</artifactId>
 				<version>1.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-request-api</artifactId>
-				<version>1.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-request-servlet</artifactId>
-				<version>1.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-request-freemarker</artifactId>
-				<version>1.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-request-mustache</artifactId>
-				<version>1.0.4</version>
-			</dependency>
-			<dependency>
-				<groupId>com.github.spullara.mustache.java</groupId>
-				<artifactId>compiler</artifactId>
-				<version>0.8.4</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>12.0</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.code.findbugs</groupId>
-				<artifactId>jsr305</artifactId>
-				<version>1.3.9</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-request-servlet-wildcard</artifactId>
-				<version>1.0.4</version>
-			</dependency>
-
-			<dependency>
-				<groupId>commons-digester</groupId>
-				<artifactId>commons-digester</artifactId>
-				<version>2.0</version>
+				<exclusions>
+					<exclusion>
+						<groupId></groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 			<!-- freemarker -->
 			<dependency>
 				<groupId>org.freemarker</groupId>
 				<artifactId>freemarker</artifactId>
-				<version>2.3.20</version>
+				<version>${org.freemarker.version}</version>
 			</dependency>
 
 			<!-- slf4j -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
-				<version>1.7.6</version>
+				<version>${org.slf4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
-				<version>1.7.6</version>
+				<version>${org.slf4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-log4j12</artifactId>
-				<version>1.7.6</version>
+				<version>${org.slf4j.version}</version>
 			</dependency>
 
 			<!-- log4j -->
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
-				<version>1.2.17</version>
+				<version>${org.log4j.version}</version>
 			</dependency>
 
 			<!-- Mysql connector -->
