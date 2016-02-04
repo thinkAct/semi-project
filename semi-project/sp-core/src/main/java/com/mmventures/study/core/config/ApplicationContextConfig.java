@@ -14,7 +14,6 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableTransactionManagement
@@ -24,14 +23,6 @@ public class ApplicationContextConfig {
     private final String DB_USER_PASSWORD = "1234567890";
     
     private final String[] PACKAGE_TARGET = {"com.mmventures.study.core.domain"};
-    
-    @Bean(name = "viewResolver")
-    public InternalResourceViewResolver getViewResolver() {
-	InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-	viewResolver.setPrefix("/WEB-INF/views/");
-	viewResolver.setSuffix(".jsp");
-	return viewResolver;
-    }
 
     @Bean(name = "dataSource")
     public DataSource getDataSource() {

@@ -1,5 +1,7 @@
 package com.mmventures.study.board.service;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,9 +21,17 @@ public class BoardContentService {
     }
     
     public void writeBoardContent() {
+	Date now = new Date();
 	BoardContent bc = new BoardContent();
 	bc.setContent("TEST CONTENT");
-	bc.setCommonField(new CommonField());
+	
+	CommonField commonField = new CommonField();
+	commonField.setCreateDate(now);
+	commonField.setUpdateDate(now);
+	commonField.setDelete(false);
+	commonField.setModifier("tester");
+	
+	bc.setCommonField(commonField);
 	
 	boardContentDao.insertBoardContent(bc);
 	

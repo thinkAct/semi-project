@@ -113,7 +113,25 @@
 		</dependency>
 
 	</dependencies>
+	<!-- build config
 	<build>
-		<finalName>sp-board</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>UTF-8</encoding>
+					<excludes>
+						<exclude>src/main/resources/*</exclude>
+						<exclude>resources/*</exclude>
+						<exclude>**/*.*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
+	 -->
 </project>

@@ -30,22 +30,7 @@ public class BoardController {
     /** Logger. */
     private static final Logger LOGGER = LoggerFactory
 	    .getLogger(BoardController.class);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+        
     /**
      * 임시 테스트용.
      * 

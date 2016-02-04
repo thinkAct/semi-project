@@ -40,6 +40,8 @@
 		<org.freemarker.version>2.3.23</org.freemarker.version>
 
 		<junit.version>4.7</junit.version>
+		
+		<org.aspectj.version>1.8.8</org.aspectj.version>
 
 	</properties>
 
@@ -244,12 +246,6 @@
 				<groupId>org.apache.tiles</groupId>
 				<artifactId>tiles-api</artifactId>
 				<version>${org.apache.tiles.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId></groupId>
-						<artifactId>slf4j-api</artifactId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.tiles</groupId>
@@ -293,7 +289,7 @@
 				<version>1.0.4</version>
 				<exclusions>
 					<exclusion>
-						<groupId></groupId>
+						<groupId>org.slf4j</groupId>
 						<artifactId>slf4j-api</artifactId>
 					</exclusion>
 				</exclusions>
@@ -363,6 +359,19 @@
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
+			
+			<!-- AspectJ -->
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjrt</artifactId>
+				<version>${org.aspectj.version}</version>
+			</dependency>
+			<!-- @Inject -->
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
+			</dependency>
 
 
 		</dependencies>
@@ -379,10 +388,13 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<encoding>UTF-8</encoding>
+					<!-- 
 					<excludes>
 						<exclude>src/main/resources/*</exclude>
 						<exclude>resources/*</exclude>
+						<exclude>**/*.*</exclude>
 					</excludes>
+					 -->
 				</configuration>
 			</plugin>
 		</plugins>
