@@ -21,14 +21,7 @@ import com.mmventures.study.board.service.BoardInfoService;
  * Handles requests for the application home page.
  */
 @Controller
-public class BoardController {
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	@Autowired
-	MessageSource messageSource;
-	
-	
+public class BoardController {	
 	
     /** BoardContent service. */
     @Autowired
@@ -65,16 +58,6 @@ public class BoardController {
 	return "home";
     }
     
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login() throws Exception{
-		Locale locale = LocaleContextHolder.getLocale();
-		String testmsg1 = messageSource.getMessage("AbstractLdapAuthenticationProvider.badCredentials", null, "시큐리티 디폴트 메시지", Locale.KOREA);
-		String testmsg2 = messageSource.getMessage("TestKey.testParam", null, "디폴트 메시지", Locale.KOREA);
-		
-		logger.debug("testmsg1 : {}", testmsg1);
-		logger.debug("testmsg2 : {}", testmsg2);
-		return "login";
-	}
 
     /**
      * Hibernate test.
