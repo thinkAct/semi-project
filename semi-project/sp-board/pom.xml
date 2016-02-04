@@ -24,6 +24,7 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- Spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -32,6 +33,33 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-acl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-crypto</artifactId>
+		</dependency>
+
 
 		<!-- JPA, Hibernate -->
 		<dependency>
@@ -113,25 +141,10 @@
 		</dependency>
 
 	</dependencies>
-	<!-- build config
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-					<encoding>UTF-8</encoding>
-					<excludes>
-						<exclude>src/main/resources/*</exclude>
-						<exclude>resources/*</exclude>
-						<exclude>**/*.*</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	 -->
+	<!-- build config <build> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-compiler-plugin</artifactId> <version>3.3</version> <configuration> 
+		<source>${java.version}</source> <target>${java.version}</target> <encoding>UTF-8</encoding> 
+		<excludes> <exclude>src/main/resources/*</exclude> <exclude>resources/*</exclude> 
+		<exclude>**/*.*</exclude> </excludes> </configuration> </plugin> </plugins> 
+		</build> -->
 </project>
