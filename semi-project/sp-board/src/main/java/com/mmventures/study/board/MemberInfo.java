@@ -1,4 +1,4 @@
-package com.mmventures.study.security.domain;
+package com.mmventures.study.board;
 
 import java.io.Serializable;
 import java.util.Collection;

@@ -21,8 +21,15 @@
 		<intercept-url pattern="/home.do" access="permitAll" />
 		<intercept-url pattern="/**" access="permitAll"/>
 		
-		<form-login username-parameter="loginid" password-parameter="loginpwd" login-page="/login.do" default-target-url="/home.do" />
-		
+		<form-login
+			username-parameter="loginid"
+			password-parameter="loginpwd" 
+			login-page="/login.do"
+			default-target-url="/home.do"/>
+			
+			<!-- authentication-success-handler-ref="memberAuthenticationSuccessHandler"
+			authentication-failure-handler-ref="memberAuthenticationFailureHandler"/> -->
+			
 	</http>
 	<authentication-manager>
 		<authentication-provider>
