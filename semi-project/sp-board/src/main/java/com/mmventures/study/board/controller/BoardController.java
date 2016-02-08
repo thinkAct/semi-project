@@ -43,21 +43,21 @@ public class BoardController {
      *            dataModel
      * @return jsp url
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public final String home(final Locale locale, final Model model) {
-	LOGGER.info("Welcome home! The client locale is {}.", locale);
-
-	Date date = new Date();
-	DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
-		DateFormat.LONG, locale);
-
-	String formattedDate = dateFormat.format(date);
-
-	model.addAttribute("serverTime", formattedDate);
-
-	return "home";
-    }
-    
+//    @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public final String home(final Locale locale, final Model model) {
+//	LOGGER.info("Welcome home! The client locale is {}.", locale);
+//
+//	Date date = new Date();
+//	DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
+//		DateFormat.LONG, locale);
+//
+//	String formattedDate = dateFormat.format(date);
+//
+//	model.addAttribute("serverTime", formattedDate);
+//
+//	return "home";
+//    }
+//    
 
     /**
      * Hibernate test.
