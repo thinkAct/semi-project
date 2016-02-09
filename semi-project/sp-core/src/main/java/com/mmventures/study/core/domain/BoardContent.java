@@ -3,6 +3,7 @@ package com.mmventures.study.core.domain;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -15,7 +16,7 @@ import javax.persistence.Id;
 public class BoardContent {
     /** Board content id. */
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     /** Board info id. */
     private int boardId;
@@ -23,6 +24,8 @@ public class BoardContent {
     private int categoryId;
     /** User id. */
     private int userId;
+    /** Subject. */
+    private String subject;
     /** Content. */
     private String content;
     /** Is notice content. */
@@ -31,6 +34,8 @@ public class BoardContent {
     private boolean isSecret;
     /** Secret content password. */
     private String password;
+    /** Link field. */
+    private String link;
     /** Common field. */
     @Embedded
     private CommonField commonField;
@@ -74,6 +79,14 @@ public class BoardContent {
 	this.userId = userId;
     }
 
+    public String getSubject() {
+	return subject;
+    }
+
+    public void setSubject(String subject) {
+	this.subject = subject;
+    }
+
     public String getContent() {
 	return content;
     }
@@ -106,12 +119,29 @@ public class BoardContent {
 	this.password = password;
     }
     
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public CommonField getCommonField() {
 	return commonField;
     }
-    
+
     public void setCommonField(CommonField commonField) {
 	this.commonField = commonField;
     }
 
+    @Override
+    public String toString() {
+	return "BoardContent [id=" + id + ", boardId=" + boardId
+		+ ", categoryId=" + categoryId + ", userId=" + userId
+		+ ", subject=" + subject + ", content=" + content
+		+ ", isNotice=" + isNotice + ", isSecret=" + isSecret
+		+ ", password=" + password + ", link=" + link + ", commonField="
+		+ commonField + "]";
+    }
 }

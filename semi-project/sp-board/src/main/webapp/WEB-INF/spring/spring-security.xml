@@ -11,11 +11,12 @@
 	<!-- enable use-expressions -->
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+		
 
 		<!-- access denied page -->
 		<access-denied-handler error-page="/403" />
 		<form-login 
-		    login-page="/login" 
+		    login-page="/login.do" 
 		    default-target-url="/welcome"
 			authentication-failure-url="/login?error" 
 			username-parameter="username"
@@ -26,8 +27,8 @@
 	</http>
 
 	
-	
-	<beans:bean id="userInfoDao" class="com.mmventures.study.security.Dao.SecurityUserInfoDao">
+									    
+	<beans:bean id="userInfoDao" class="com.mmventures.study.security.dao.SecurityUserInfoDao">
 		<beans:property name="sessionFactory" ref ="sessionFactory"></beans:property>
 	</beans:bean>
 	
@@ -39,8 +40,8 @@
 
 	<authentication-manager>
 		<authentication-provider user-service-ref="userInfoDetailsService" >
-			<password-encoder hash="bcrypt" />    
-		</authentication-provider>
+<!-- 			<password-encoder hash="bcrypt" />    
+ -->		</authentication-provider>
 	</authentication-manager>
 
 	
